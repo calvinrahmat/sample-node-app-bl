@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: node-demo
+  name: node-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-demo
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: node-demo
+    spec:
+      containers:
+      - image: calvinrahmat/node-demo
+        name: node-demo
+        ports:
+        - containerPort: 8080
+        resources: {}
+status: {}
