@@ -33,4 +33,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.VM_USERNAME }}
           key: ${{ secrets.VM_KEY }}
-          script: sudo podman ps
+          script: |
+           docker stop node-demo
+           docker rm -f node-demo
+           docker run -d -p 80:8080 --name node-demo calvinrahmat/node-demo
