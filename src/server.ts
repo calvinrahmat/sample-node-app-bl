@@ -8,5 +8,5 @@ app.proxy = true;
 
 app.use(router.routes()).use(router.allowedMethods());
 
-app.listen(80);
-console.log(`Server running on port 80`);
+app.listen(8080);
+console.log(`Server running on port 8080`);
