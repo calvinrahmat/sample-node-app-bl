@@ -26,7 +26,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: calvinrahmat/node-demo:latest
+          tags: calvinrahmat/node-demo
       - name: executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@v0.1.8
         with:
@@ -36,4 +36,5 @@ jobs:
           script: |
            sudo podman stop node-demo
            sudo podman rm -f node-demo
+           sudo podman pull calvinrahmat/node-demo
            sudo podman run -d -p 80:8080 --name node-demo calvinrahmat/node-demo
