@@ -8,7 +8,11 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
+RUN ls
+
 RUN yarn install
+
+RUN yarn lint tslint.json
 
 RUN yarn build
 # If you are building your code for production
