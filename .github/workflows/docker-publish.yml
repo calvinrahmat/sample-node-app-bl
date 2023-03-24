@@ -34,6 +34,6 @@ jobs:
           username: ${{ secrets.VM_USERNAME }}
           key: ${{ secrets.VM_KEY }}
           script: |
-           docker stop node-demo
-           docker rm -f node-demo
-           docker run -d -p 80:8080 --name node-demo calvinrahmat/node-demo
+           podman stop node-demo
+           podman rm -f node-demo
+           podman run -d -p 80:8080 --name node-demo calvinrahmat/node-demo
