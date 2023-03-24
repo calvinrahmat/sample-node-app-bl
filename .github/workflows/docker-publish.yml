@@ -36,4 +36,4 @@ jobs:
           script: |
            podman stop node-demo
            podman rm -f node-demo
-           podman run -d -p 80:8080 --name node-demo calvinrahmat/node-demo
+           sudo podman run -d -p 80:8080 --name node-demo calvinrahmat/node-demo
